@@ -1,6 +1,12 @@
+#locals {
+#  name="siva"
+#  training="devops"
+#  instance_type = var.instance_names[count.index] == "mongodb" || var.instance_names[count.index] == "mysql" || var.instance_names[count.index] == "shipping" ? "t3.small" : "t2.micro"
+#  ip = var.instance_names[count.index] == "web" ? aws_instance.web[count.index].public_ip : aws_instance.web[count.index].private_ip
+#}
+
 locals {
-  name="siva"
-  training="devops"
-  instance_type = var.instance_names[count.index] == "mongodb" || var.instance_names[count.index] == "mysql" || var.instance_names[count.index] == "shipping" ? "t3.small" : "t2.micro"
-  ip = var.instance_names[count.index] == "web" ? aws_instance.web[count.index].public_ip : aws_instance.web[count.index].private_ip
+  name = "Siva"
+  training = "Devops"
+  instance_type = var.isProd ? "t3.micro" : "t3.small"
 }
